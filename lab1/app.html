@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветовые Модели</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .color-box {
+            grid-column: span 3;
+            height: 120px;
+            margin-bottom: 30px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #808080; /* Default color */
+        }
+
+        .slider-group {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .slider input[type="range"] {
+            flex: 1;
+            margin-right: 15px;
+        }
+
+        .slider input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .slider label {
+            width: 40px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="color"] {
+            grid-column: span 3;
+            height: 50px;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-bottom: 30px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        input[type="color"]:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-group h3 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <input type="color" id="colorPicker" />
+    <div id="colorBox" class="color-box"></div>
+
+    <div class="slider-group">
+        <h3>RGB</h3>
+        <div class="slider">
+            <label for="rRange">R:</label>
+            <input type="range" id="rRange" min="0" max="255" value="128">
+            <input type="number" id="rInput" min="0" max="255" value="128">
+        </div>
+        <div class="slider">
+            <label for="gRange">G:</label>
+            <input type="range" id="gRange" min="0" max="255" value="128">
+            <input type="number" id="gInput" min="0" max="255" value="128">
+        </div>
+        <div class="slider">
+            <label for="bRange">B:</label>
+            <input type="range" id="bRange" min="0" max="255" value="128">
+            <input type="number" id="bInput" min="0" max="255" value="128">
+        </div>
+    </div>
+
+    <div class="slider-group">
+        <h3>CMYK</h3>
+        <div class="slider">
+            <label for="cRange">C:</label>
+            <input type="range" id="cRange" min="0" max="100" value="0">
+            <input type="number" id="cInput" min="0" max="100" value="0">
+        </div>
+        <div class="slider">
+            <label for="mRange">M:</label>
+            <input type="range" id="mRange" min="0" max="100" value="0">
+            <input type="number" id="mInput" min="0" max="100" value="0">
+        </div>
+        <div class="slider">
+            <label for="yRange">Y:</label>
+            <input type="range" id="yRange" min="0" max="100" value="0">
+            <input type="number" id="yInput" min="0" max="100" value="0">
+        </div>
+        <div class="slider">
+            <label for="kRange">K:</label>
+            <input type="range" id="kRange" min="0" max="100" value="0">
+            <input type="number" id="kInput" min="0" max="100" value="0">
+        </div>
+    </div>
+
+    <div class="slider-group">
+        <h3>HSV</h3>
+        <div class="slider">
+            <label for="hRange">H:</label>
+            <input type="range" id="hRange" min="0" max="360" value="0">
+            <input type="number" id="hInput" min="0" max="360" value="0">
+        </div>
+        <div class="slider">
+            <label for="sRange">S:</label>
+            <input type="range" id="sRange" min="0" max="100" value="0">
+            <input type="number" id="sInput" min="0" max="100" value="0">
+        </div>
+        <div class="slider">
+            <label for="vRange">V:</label>
+            <input type="range" id="vRange" min="0" max="100" value="0">
+            <input type="number" id="vInput" min="0" max="100" value="0">
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
