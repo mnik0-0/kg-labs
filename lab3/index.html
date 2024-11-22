@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rasterization Algorithms</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    canvas {
+      border: 1px solid #000;
+      margin-top: 10px;
+      background-color: #fff;
+    }
+    .controls {
+      margin-top: 20px;
+      text-align: center;
+    }
+    label, button {
+      margin: 5px;
+    }
+    .canvas-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Raster Graphics Algorithms</h1>
+
+  <!-- Canvas for Line Algorithms -->
+  <div class="canvas-container">
+    <h2>Line Algorithms</h2>
+    <div>
+      <h3>Step-by-Step</h3>
+      <canvas id="lineCanvas1" width="600" height="600"></canvas>
+    </div>
+    <p id="stepByStepTime">Step-by-Step Time: 0 ms</p>
+
+
+    <div>
+      <h3>DDA</h3>
+      <canvas id="lineCanvas2" width="600" height="600"></canvas>
+    </div>
+    <p id="ddaTime">DDA Time: 0 ms</p>
+    <div>
+      <h3>Bresenham Line</h3>
+      <canvas id="lineCanvas3" width="600" height="600"></canvas>
+    </div>
+    <p id="bresenhamLineTime">Bresenham Line Time: 0 ms</p>
+  </div>
+
+  <!-- Controls for Line Algorithms -->
+  <div class="controls">
+    <h3>Line Parameters</h3>
+    <label>
+      Start Point: X <input type="number" id="startX" value="0">
+      Y <input type="number" id="startY" value="0">
+    </label>
+    <label>
+      End Point: X <input type="number" id="endX" value="10">
+      Y <input type="number" id="endY" value="16">
+    </label>
+    <button onclick="drawLine()">Draw Line</button>
+  </div>
+
+  <!-- Canvas for Circle Algorithm -->
+  <div class="canvas-container">
+    <h2>Circle Algorithm</h2>
+    <canvas id="circleCanvas" width="600" height="600"></canvas>
+    <p id="bresenhamCircleTime">Bresenham Circle Time: 0 ms</p>
+  </div>
+
+  <!-- Controls for Circle -->
+  <div class="controls">
+    <h3>Circle Parameters</h3>
+    <label>
+      Radius: <input type="number" id="radius" value="20">
+    </label>
+    <button onclick="drawCircle()">Draw Circle</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
